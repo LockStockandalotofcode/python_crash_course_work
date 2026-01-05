@@ -1,0 +1,3 @@
+from random import choice 
+players = ['charles', 'randy', 'jason', 'kalu']
+first_up = choice(players)

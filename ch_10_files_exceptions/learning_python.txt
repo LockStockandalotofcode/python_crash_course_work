@@ -1,0 +1,5 @@
+In Python you can make functions.
+in Python you can write code beautifully.
+In Python you can build classes, inherit classes.
+In Python you can build modules, import modules to keep main program files clean.
+In Python you can use aliases for imported classes, functions to improve readability.
