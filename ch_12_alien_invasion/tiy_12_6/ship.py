@@ -12,7 +12,7 @@ class Ship:
 
         # Load the ship and get its rect.
         # rect stands for rectangular coordinates (x, y, width, height), in software/ graphics
-        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.image.load('images/rocket_small.png')
         self.rect = self.image.get_rect()
 
         # Start each new ship at the bottom center of the screen.
