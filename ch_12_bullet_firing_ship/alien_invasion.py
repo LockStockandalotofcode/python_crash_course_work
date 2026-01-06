@@ -33,7 +33,7 @@ class AlienInvasion:
             self.clock.tick(60)
     
     def _check_events(self):
-        """Respond to keypresses and mouse events."""
+        """Helper function for main loop: Respond to keypresses and mouse events."""
         # Watch for keyboard and mouse events.
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -44,7 +44,7 @@ class AlienInvasion:
                self._check_keyup_events(event)
 
     def _check_keydown_events(self, event):
-        """Respond to keypresses."""
+        """Helper function for events: Respond to keypresses."""
         if event.key == pygame.K_RIGHT:
             # move ship to right
             self.ship.moving_right = True
@@ -56,20 +56,21 @@ class AlienInvasion:
             self._fire_bullet()
 
     def _check_keyup_events(self, event):
-        """Respond to key releases."""
+        """Helper function for events: Respond to key releases."""
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
     
     def _fire_bullet(self):
-        """Create a new bullet and add it to the bullets group."""
+        """Helper function for events: 
+        Create a new bullet and add it to the bullets group."""
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
 
     def _update_bullets(self):
-        """Update positions of bullets and get rid of od bullets."""
+        """Helper function for main loop: Update positions of bullets and get rid of old bullets."""
         # Update bullet positions.
         self.bullets.update()
 
@@ -80,7 +81,7 @@ class AlienInvasion:
 
 
     def _update_screen(self):
-        """Update images on screen, and flip to the new screen."""
+        """Helper function for main loop: Update images on screen, and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
         self.screen.fill(self.settings.bg_color)
         for bullet in self.bullets.sprites():
