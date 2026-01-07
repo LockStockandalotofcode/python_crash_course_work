@@ -1,0 +1,1 @@
+current_y = goku_height
