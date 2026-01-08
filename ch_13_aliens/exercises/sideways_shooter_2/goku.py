@@ -22,8 +22,14 @@ class Goku(Sprite):
         # Store goku's exact position 
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
+    
+    def check_edges(self):
+        """Return true if any goku reaches top or bottom edge of screen."""
+        screen_rect = self.screen.get_rect()
+        return (self.rect.top <= 0) or (self.rect.bottom >= screen_rect.height)
 
     def update(self):
         """Move single goku up or down."""
-        self.y -= 5*self.settings.goku_speed 
+        self.y += self.settings.goku_speed * self.settings.army_direction
         self.rect.y = self.y
+        # self.x -= self.settings.army_sliding_speed

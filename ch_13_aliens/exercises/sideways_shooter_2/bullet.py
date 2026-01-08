@@ -2,18 +2,18 @@ import pygame
 from pygame.sprite import Sprite
 
 class Bullet(Sprite):
-    """A class to manage bullets fired from ship."""
+    """A class to manage bullets fired from gun."""
 
-    def __init__(self, ai_game):
-        """Create a bullet object at the ship's current position."""
+    def __init__(self, ss_game):
+        """Create a bullet object at the gun's current position."""
         super().__init__()
-        self.screen = ai_game.screen
-        self.settings = ai_game.settings
+        self.screen = ss_game.screen
+        self.settings = ss_game.settings
         self.color = self.settings.bullet_color
 
         # Create a bullet rect at (0, 0) and then set correct position.
         self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
-        self.rect.midright = ai_game.ship.rect.midright
+        self.rect.midright = ss_game.gun.rect.midright
 
         # Store bullet's y coordinate as float to control its speed.
         self.x = float(self.rect.x)
