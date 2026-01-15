@@ -25,3 +25,6 @@ venv.bak/
 # Temp files
 *.tmp
 *.temp
+.DS_Store
+*.DS_Store
+**/.DS_Store
